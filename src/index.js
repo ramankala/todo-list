@@ -1,16 +1,17 @@
-import {todoFactory} from './todoFactory';
 import pushToDo from './pushToDo';
 import render from './render';
+import createToDo from './createToDo';
 
 const todoFlow = (() => {
 
     let toDoArr = [];
 
-    const item = todoFactory('grocery', 'apples', 'xxx', '1');
+    const item = createToDo();
 
     pushToDo(item, toDoArr);
 
     render(toDoArr);
+
 
     return { item, toDoArr };
 })();
