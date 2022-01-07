@@ -1,20 +1,16 @@
 import {todoFactory} from './todoFactory';
 import pushToDo from './pushToDo';
+import render from './render';
 
 const todoFlow = (() => {
 
     let toDoArr = [];
 
-    const item = todoFactory('grocery', 'carrots', 'xxx', '1');
+    const item = todoFactory('grocery', 'apples', 'xxx', '1');
 
     pushToDo(item, toDoArr);
 
-    function render () {
-        toDoArr.forEach(function(item, array, index){
-            let toDoDiv = document.createElement("div");
-            
-        });
-    }
+    render(toDoArr);
 
     return { item, toDoArr };
 })();
