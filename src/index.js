@@ -1,20 +1,53 @@
-import pushToDo from './pushToDo';
 import render from './render';
-import createToDo from './createToDo';
+import {createToDoBtn} from './createToDo';
 
 const todoFlow = (() => {
 
-    let toDoArr = [];
+    const todoList = {
+        projectA: [],
+        projectB: [],
+        projectC: [],
+    };
 
-    const item = createToDo();
+    const projectA = document.createElement('div');
+    projectA.textContent = "Project A";
+    const projectB = document.createElement('div');
+    projectB.textContent = "Project B";
+    const projectC = document.createElement('div');
+    projectC.textContent = "Project C";
 
-    pushToDo(item, toDoArr);
+    const content = document.querySelector("#content");
 
-    render(toDoArr);
+    const toDoBtn = document.querySelector("#createToDoBtn");
 
 
-    return { item, toDoArr };
+    toDoBtn.addEventListener('click', function(){
+        createToDoBtn(todoList);
+    });
+
+    projectA.addEventListener('click', function(){
+        render(todoList.projectA);
+    });
+    projectB.addEventListener('click', function(){
+        render(todoList.projectB);
+    });
+    projectC.addEventListener('click', function(){
+        render(todoList.projectC);
+    });
+
+
+    content.appendChild(projectA);
+    content.appendChild(projectB);
+    content.appendChild(projectC);
+
+
+
+
+    return { todoList };
 })();
 
 // console.log(todoFlow.item);
-console.log(todoFlow.toDoArr);
+// console.log(todoFlow.toDoArr);
+console.log("project a: " + todoFlow.todoList.projectA);
+console.log("project b:" + todoFlow.todoList.projectB);
+console.log("project c:" + todoFlow.todoList.projectC);
