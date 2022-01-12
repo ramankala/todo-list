@@ -1,7 +1,6 @@
 import {todoFactory} from './todoFactory';
 import pushToDo from './pushToDo';
 import render from './render';
-import todoList from './index';
 
 const createToDo = () => {
     let title = window.prompt("Enter title of ToDo:");
