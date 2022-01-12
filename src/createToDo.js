@@ -23,24 +23,15 @@ const createToDoBtn = (todoList) => {
 
     const item = createToDo();
 
-    if (item.location == "projectA"){
-        pushToDo(item, todoList.projectA);
-        render(todoList.projectA);
-        return;
-    }
-    else if (item.location == "projectB"){
-        pushToDo(item, todoList.projectB);
-        render(todoList.projectB);
-        return;
-    }
-    else if (item.location == "projectC"){
-        pushToDo(item, todoList.projectC);
-        render(todoList.projectC);
+    if (item.location == "default" || item.location == "" || item.location == null){
+        pushToDo(item, todoList.defaultProj);
+        render(todoList.defaultProj);
         return;
     }
     else {
-        pushToDo(item, todoList.projectA);
-        render(todoList.projectA);
+        pushToDo(item, todoList[item.location]);
+        render(todoList[item.location]);
+        return;
     }
 }
 
