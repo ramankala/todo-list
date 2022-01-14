@@ -5,4 +5,14 @@ const deRender = () => {
     }
 }
 
-export { deRender };
+const deRenderTitle = () => {
+    let parent = document.querySelector("#bodyTitle");
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+export {
+    deRender,
+    deRenderTitle
+};

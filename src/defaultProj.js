@@ -1,9 +1,11 @@
-import { deRender } from "./deRender";
+import { deRender, deRenderTitle } from "./deRender";
+import { generateTitle } from "./generateTitle";
 import render from "./render";
 
 const defaultProj = (toDoList) => {
 
     const defaultProj = document.createElement('div');
+    defaultProj.classList.add('newProj');
     defaultProj.textContent = "Default";
 
     const projectList = document.querySelector("#projectList");
@@ -11,6 +13,9 @@ const defaultProj = (toDoList) => {
     defaultProj.addEventListener('click', function(){
         deRender();
         render(toDoList.defaultProj);
+        deRenderTitle();
+        generateTitle();
+
     });
 
 

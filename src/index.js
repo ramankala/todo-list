@@ -1,12 +1,16 @@
 import {createProj} from './createProject';
 import {defaultProj} from './defaultProj';
 import {toDoBtn} from './toDoBtn';
+import {deRenderTitle} from './deRender';
+import { generateTitle } from './generateTitle';
 
 const toDoFlow = (() => {
 
     const toDoList = {
         defaultProj: [],
     };
+
+    generateTitle();
 
     defaultProj(toDoList);
 
@@ -27,4 +31,4 @@ const toDoFlow = (() => {
 
 // console.log(todoFlow.item);
 // console.log(toDoFlow.toDoList);
-console.log("project a: " + toDoFlow.toDoList.projectA);
+console.log("project a: " + toDoFlow.toDoList.defaultProj);
