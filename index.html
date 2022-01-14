@@ -3,13 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <title>To-Do List</title>
-
+    <link rel="stylesheet" href="styles/styles.css"/>
   </head>
   <body>
-      <div id="projectList"></div>
-      <div id="content"></div>
-      <button id="createToDoBtn">Create ToDo</button>
-      <button id="createProjectBtn">Create Projects</button>
+    <div id="container">
+      <div id="header">To-Do List</div>
+      
+      <div id="sideBodyContainer">
+
+
+        <div id="sideContainer">
+          <div id="projectList"></div>
+          <button id="createProjectBtn">Create Projects</button>
+        </div>
+
+        <div id=bodyContainer>
+          <div id="bodyTitle"></div>
+          <div id="bodySubContainer">
+            <div id="content"></div>
+            <button id="createToDoBtn">Create ToDo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
