@@ -68,7 +68,7 @@ html,body{
     
 }
 
-#toDoDiv{
+.toDoDiv{
     display: flex;
     gap: 80px;
     height: auto;

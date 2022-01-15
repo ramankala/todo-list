@@ -2,6 +2,7 @@ import {todoFactory} from './todoFactory';
 import pushToDo from './pushToDo';
 import render from './render';
 import { deRender } from './deRender';
+import { generateTitle } from './generateTitle';
 
 const createToDo = () => {
     let title = window.prompt("Enter title of ToDo:");
@@ -30,12 +31,14 @@ const createToDoBtn = (todoList) => {
         pushToDo(item, todoList.defaultProj);
         deRender();
         render(todoList.defaultProj);
+        generateTitle("Default");
         return;
     }
     else {
         pushToDo(item, todoList[item.location]);
         deRender();
         render(todoList[item.location]);
+        generateTitle(item.location);
         return;
     }
 

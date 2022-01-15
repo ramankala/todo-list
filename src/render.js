@@ -1,8 +1,11 @@
+import { removeToDo } from "./removeToDo";
 
 export default function render (toDoArr) {
     let content = document.querySelector("#content");
     toDoArr.forEach(function(item, index, array){
         let toDoDiv = document.createElement("div");
+        toDoDiv.setAttribute('id', `toDoDiv${index}`);
+        toDoDiv.classList.add('toDoDiv');
 
         let titleDiv = document.createElement("div");
         titleDiv.classList.add('titleDiv');
@@ -14,7 +17,7 @@ export default function render (toDoArr) {
         dueDiv.classList.add('dueDiv');
 
         let priorityDiv = document.createElement("div");
-        console.log(`item.priority = ${item.priority}`);
+        // console.log(`item.priority = ${item.priority}`);
         if (item.priority == "high"){
             priorityDiv.classList.add('highPriority');
         }
@@ -30,8 +33,10 @@ export default function render (toDoArr) {
 
         toggleBox.addEventListener('click', function(){
             item.toggle();
-            console.log(`item.isComplete: ${item.isComplete}`);
+            // console.log(`item.isComplete: ${item.isComplete}`);
         });
+
+        let removeBtn = removeToDo(toDoArr, index);
 
         titleDiv.textContent = item.title;
         descDiv.textContent = item.description;
@@ -42,10 +47,11 @@ export default function render (toDoArr) {
         toDoDiv.appendChild(titleDiv);
         toDoDiv.appendChild(descDiv);
         toDoDiv.appendChild(dueDiv);
+        toDoDiv.appendChild(removeBtn);
 
-        toDoDiv.setAttribute("id", "toDoDiv");
-        console.log(`toDoArr item:${toDoArr} at index:${index}`);
-        console.log(`item.title: ${item.title}`);
+        // toDoDiv.setAttribute("id", "toDoDiv");
+        // console.log(`toDoArr item:${toDoArr} at index:${index}`);
+        // console.log(`item.title: ${item.title}`);
         // toDoDiv.textContent = item.title + " " + item.description + " " + item.dueDate + " " + item.priority;
 
         content.appendChild(toDoDiv);
