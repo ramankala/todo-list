@@ -18,7 +18,6 @@ const defaultProj = (toDoList) => {
 
     });
 
-
     projectList.appendChild(defaultProj);
 }
 

@@ -8,16 +8,18 @@ const createProj = (toDoList) => {
     newProj.classList.add('newProj');
 
     const projectName = window.prompt("Enter name of project:");
-    toDoList[projectName] = [];
+    let filteredName = projectName.toLowerCase();
+
+    newProj.textContent = projectName;
+
+    toDoList[filteredName] = [];
     
 
     // newProj are projects in the list users can click to view ToDos
 
-    newProj.textContent = projectName;
-
-    newProj.addEventListener('click', function(){
+    newProj.addEventListener('click', function(e){
         deRender();
-        render(toDoList[projectName]);
+        render(toDoList[filteredName]);
         deRenderTitle();
         generateTitle(projectName);
     })

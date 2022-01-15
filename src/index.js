@@ -1,7 +1,6 @@
 import {createProj} from './createProject';
 import {defaultProj} from './defaultProj';
 import {toDoBtn} from './toDoBtn';
-import {deRenderTitle} from './deRender';
 import { generateTitle } from './generateTitle';
 
 const toDoFlow = (() => {
@@ -21,6 +20,7 @@ const toDoFlow = (() => {
     projectBtn.addEventListener('click', function(){
         createProj(toDoList);
     })
+
 
 
 

@@ -3,8 +3,8 @@ import { deRenderTitle } from "./deRender";
 
 const generateTitle = (projectName) => {
 
-    const projTitle = document.createElement('div');
-    projTitle.classList.add('projTitle');
+    deRenderTitle();
+
     const bodyTitle = document.querySelector('#bodyTitle');
 
     const title1 = document.createElement('div');
@@ -17,23 +17,18 @@ const generateTitle = (projectName) => {
     if (projectName == "" || projectName == null){
 
         title1.textContent = "Default";
-
-        projTitle.appendChild(title1);
+        bodyTitle.appendChild(title1);
 
     }
     else {
 
         title1.textContent = projectName;
 
-        projTitle.appendChild(title1);
+        bodyTitle.appendChild(title1);
 
     }
 
-    projTitle.appendChild(title2);
-
-
-    deRenderTitle();
-    bodyTitle.prepend(projTitle);
+    bodyTitle.appendChild(title2);
 }
 
 

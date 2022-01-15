@@ -39,34 +39,65 @@ html,body{
     justify-content: flex-start;
     align-items: center;
     flex: 4;
-}
-#content{
-    display: flex;
-    flex-direction: column;
+    margin: 60px;
     gap: 10px;
-    border-bottom: solid black 2px;
 }
-#projectList{
-    
-}
+
 #bodyTitle{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 400px;
+    font-size: 24px;
+    font-weight: 550;
 }
+#bodySubContainer {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    gap: 10px;
+}
+#projectList{
+    
+}
+
 #toDoDiv{
+    display: flex;
+    gap: 80px;
+    height: auto;
+    width: auto;
+
     border-top: solid black 2px;
     padding: 20px;
-
-    
+    font-size: 20px;
+    font-weight: 500;
 }
 
 #createToDoBtn{
     margin-top: 20px;
 }
-
-.projTitle {
+.titleDiv,.descDiv,.dueDiv{
     display: flex;
-    justify-content: space-between;
-    
+    flex: 3;
+}
+.highPriority,.mediumPriority,.lowPriority{
+    display: flex;
+    flex: 1;
+}
+
+.highPriority{
+    border-right: solid red 7px;
+}
+.mediumPriority{
+    border-right: solid yellow 7px;
+}
+.lowPriority{
+    border-right: solid green 7px;
 }
