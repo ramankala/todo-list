@@ -15,23 +15,41 @@ html,body{
 
 }
 #header{
-    text-align: center;
+    text-align: start;
     font-size: 48px;
     font-weight:600;
-    background-color: rgb(163, 1, 33);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(138, 14, 39);
     color:white;
-    padding: 40px;
+    padding: 25px;
 }
 #sideContainer{
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
-
-    background-color: grey;
+    padding-top: 20px;
+    background-color: rgb(180, 169, 169);
     height:100%;
+}
+
+#projectList{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    align-items: center;
+    
+}
+#createProjectBtn, #createToDoBtn{
+    margin: auto;
+    font-size: 20px;
+    font-weight: 550;
 }
 #bodyContainer{
     display: flex;
@@ -49,7 +67,8 @@ html,body{
     align-items: center;
     gap: 400px;
     font-size: 24px;
-    font-weight: 550;
+    font-weight: 600;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #bodySubContainer {
     display: flex;
@@ -64,24 +83,17 @@ html,body{
     flex: 1;
     gap: 10px;
 }
-#projectList{
-    
-}
 
 .toDoDiv{
     display: flex;
     gap: 80px;
     height: auto;
     width: auto;
-
     border-top: solid black 2px;
     padding: 20px;
     font-size: 20px;
     font-weight: 500;
-}
-
-#createToDoBtn{
-    margin-top: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .titleDiv,.descDiv,.dueDiv{
     display: flex;
@@ -103,5 +115,13 @@ html,body{
 }
 .invisibleDesc{
     display: none;
+
+}
+.removeBtn{
+    border: rgb(255, 58, 97) solid 2px;
+    background-color: rgb(255, 58, 97) ;
+    padding: 2px;
+    font-weight: 550;
+    border-radius: 6px;
 
 }
