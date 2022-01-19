@@ -52,6 +52,11 @@ export default function render (toDoArr) {
 
         });
 
+        // Code for calendar drop down meu after I learn about Forms.
+
+        // let dueDateDiv = document.createElement("input");
+        // dueDateDiv.type = 'date';
+
         let removeBtn = removeToDo(toDoArr, index);
 
         titleDiv.textContent = item.title;

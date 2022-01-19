@@ -19,10 +19,7 @@ const toDoFlow = (() => {
 
     projectBtn.addEventListener('click', function(){
         createProj(toDoList);
-    })
-
-
-
+    });
 
 
 
