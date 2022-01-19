@@ -11,7 +11,8 @@ export default function render (toDoArr) {
         titleDiv.classList.add('titleDiv');
 
         let descDiv = document.createElement("div");
-        descDiv.classList.add('descDiv');
+        descDiv.setAttribute('id', 'descDiv');
+        descDiv.classList.add('invisibleDesc');
 
         let dueDiv = document.createElement("div");
         dueDiv.classList.add('dueDiv');
@@ -34,6 +35,21 @@ export default function render (toDoArr) {
         toggleBox.addEventListener('click', function(){
             item.toggle();
             // console.log(`item.isComplete: ${item.isComplete}`);
+        });
+
+        let count = 1;
+        titleDiv.addEventListener('click', function(){
+
+            if (count % 2 != 0){
+                descDiv.classList.remove('invisibleDesc');
+                descDiv.contentEditable = true;
+                count += 1;
+            }
+            else {
+                descDiv.classList.add('invisibleDesc');
+                count += 1;
+            }
+
         });
 
         let removeBtn = removeToDo(toDoArr, index);
