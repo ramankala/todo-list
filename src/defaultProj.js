@@ -12,7 +12,7 @@ const defaultProj = (toDoList) => {
 
     defaultProj.addEventListener('click', function(){
         deRender();
-        render(toDoList.defaultProj);
+        render(toDoList.Default);
         deRenderTitle();
         generateTitle();
 

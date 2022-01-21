@@ -1,3 +1,4 @@
+import { addToLocal } from "./addToLocal";
 import { deRender, deRenderTitle } from "./deRender";
 import { generateTitle } from "./generateTitle";
 import render from "./render";
@@ -13,6 +14,8 @@ const createProj = (toDoList) => {
     newProj.textContent = projectName;
 
     toDoList[filteredName] = [];
+
+    addToLocal(toDoList);
     
 
     // newProj are projects in the list users can click to view ToDos

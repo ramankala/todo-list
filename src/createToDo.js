@@ -4,6 +4,7 @@ import render from './render';
 import { deRender } from './deRender';
 import { generateTitle } from './generateTitle';
 import { format, parse } from 'date-fns';
+import { addToLocal } from './addToLocal';
 
 const createToDo = () => {
     let title = window.prompt("Enter title of ToDo:");
@@ -43,18 +44,22 @@ const createToDoBtn = (todoList) => {
     const item = createToDo();
 
     if (item.location == "default" || item.location == "" || item.location == null){
-        pushToDo(item, todoList.defaultProj);
+        pushToDo(item, todoList.Default);
+        console.log(todoList);
         deRender();
-        render(todoList.defaultProj);
+        render(todoList.Default);
+        addToLocal(todoList);
         generateTitle("Default");
-        return;
+        return todoList;
     }
     else {
         pushToDo(item, todoList[item.location]);
+        console.log(todoList);
         deRender();
         render(todoList[item.location]);
+        addToLocal(todoList);
         generateTitle(item.location);
-        return;
+        return todoList;
     }
 
 }

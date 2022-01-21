@@ -2,24 +2,56 @@ import {createProj} from './createProject';
 import {defaultProj} from './defaultProj';
 import {toDoBtn} from './toDoBtn';
 import { generateTitle } from './generateTitle';
+import { getFromLocal } from './getFromLocal';
+import render from './render';
+import { renderProjList } from './renderProjList';
 
 const toDoFlow = (() => {
 
     const toDoList = {
-        defaultProj: [],
+        Default: [],
     };
 
-    generateTitle();
+    console.log(localStorage);
 
-    defaultProj(toDoList);
+    const localProj = getFromLocal();
+    console.log(localProj);
 
-    toDoBtn(toDoList);
+    if (localProj == null){
 
-    const projectBtn = document.querySelector("#createProjectBtn");
+        console.log("localStorage is empty");
 
-    projectBtn.addEventListener('click', function(){
-        createProj(toDoList);
-    });
+        generateTitle();
+
+        defaultProj(toDoList);
+    
+        toDoBtn(toDoList);
+    
+        const projectBtn = document.querySelector("#createProjectBtn");
+    
+        projectBtn.addEventListener('click', function(){
+            createProj(toDoList);
+        });
+
+    }
+    else {
+
+        console.log("localStorage has something");
+
+        render(localProj.Default);
+
+        generateTitle();
+
+        renderProjList(localProj);
+    
+        toDoBtn(localProj);
+    
+        const projectBtn = document.querySelector("#createProjectBtn");
+    
+        projectBtn.addEventListener('click', function(){
+            createProj(localProj);
+        });
+    }
 
 
 
@@ -28,4 +60,4 @@ const toDoFlow = (() => {
 
 // console.log(todoFlow.item);
 // console.log(toDoFlow.toDoList);
-console.log("project a: " + toDoFlow.toDoList.defaultProj);
+// console.log("project a: " + toDoFlow.toDoList.defaultProj);

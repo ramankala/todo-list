@@ -2,6 +2,9 @@ import { removeToDo } from "./removeToDo";
 
 export default function render (toDoArr) {
     let content = document.querySelector("#content");
+
+    console.log("toDoArr in render:");
+    console.log(toDoArr);
     toDoArr.forEach(function(item, index, array){
         let toDoDiv = document.createElement("div");
         toDoDiv.setAttribute('id', `toDoDiv${index}`);
@@ -69,6 +72,7 @@ export default function render (toDoArr) {
         toDoDiv.appendChild(descDiv);
         toDoDiv.appendChild(dueDiv);
         toDoDiv.appendChild(removeBtn);
+
 
         // toDoDiv.setAttribute("id", "toDoDiv");
         // console.log(`toDoArr item:${toDoArr} at index:${index}`);
