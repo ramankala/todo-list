@@ -12,14 +12,11 @@ const toDoFlow = (() => {
         Default: [],
     };
 
-    console.log(localStorage);
-
     const localProj = getFromLocal();
-    console.log(localProj);
+
+    // localStorage is empty
 
     if (localProj == null){
-
-        console.log("localStorage is empty");
 
         generateTitle();
 
@@ -34,9 +31,9 @@ const toDoFlow = (() => {
         });
 
     }
-    else {
 
-        console.log("localStorage has something");
+    // localStorage has items
+    else {
 
         render(localProj.Default);
 
@@ -57,7 +54,3 @@ const toDoFlow = (() => {
 
     return { toDoList };
 })();
-
-// console.log(todoFlow.item);
-// console.log(toDoFlow.toDoList);
-// console.log("project a: " + toDoFlow.toDoList.defaultProj);

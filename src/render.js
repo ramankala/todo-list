@@ -3,8 +3,6 @@ import { removeToDo } from "./removeToDo";
 export default function render (toDoArr) {
     let content = document.querySelector("#content");
 
-    console.log("toDoArr in render:");
-    console.log(toDoArr);
     toDoArr.forEach(function(item, index, array){
         let toDoDiv = document.createElement("div");
         toDoDiv.setAttribute('id', `toDoDiv${index}`);
@@ -21,7 +19,6 @@ export default function render (toDoArr) {
         dueDiv.classList.add('dueDiv');
 
         let priorityDiv = document.createElement("div");
-        // console.log(`item.priority = ${item.priority}`);
         if (item.priority == "high"){
             priorityDiv.classList.add('highPriority');
         }
@@ -37,7 +34,6 @@ export default function render (toDoArr) {
 
         toggleBox.addEventListener('click', function(){
             item.toggle();
-            // console.log(`item.isComplete: ${item.isComplete}`);
         });
 
         let count = 1;
@@ -73,13 +69,6 @@ export default function render (toDoArr) {
         toDoDiv.appendChild(dueDiv);
         toDoDiv.appendChild(removeBtn);
 
-
-        // toDoDiv.setAttribute("id", "toDoDiv");
-        // console.log(`toDoArr item:${toDoArr} at index:${index}`);
-        // console.log(`item.title: ${item.title}`);
-        // toDoDiv.textContent = item.title + " " + item.description + " " + item.dueDate + " " + item.priority;
-
         content.appendChild(toDoDiv);
     });
-    // content.appendChild(toDoDiv);
 }

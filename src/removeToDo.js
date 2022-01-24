@@ -1,3 +1,4 @@
+import { addToLocal } from "./addToLocal";
 
 const removeToDo = (toDoArr, index) => {
     let removeBtn = document.createElement("div");

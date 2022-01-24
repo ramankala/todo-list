@@ -45,7 +45,7 @@ const createToDoBtn = (todoList) => {
 
     if (item.location == "default" || item.location == "" || item.location == null){
         pushToDo(item, todoList.Default);
-        console.log(todoList);
+
         deRender();
         render(todoList.Default);
         addToLocal(todoList);
@@ -54,7 +54,6 @@ const createToDoBtn = (todoList) => {
     }
     else {
         pushToDo(item, todoList[item.location]);
-        console.log(todoList);
         deRender();
         render(todoList[item.location]);
         addToLocal(todoList);
