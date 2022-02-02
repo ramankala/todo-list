@@ -14,6 +14,9 @@ const toDoFlow = (() => {
 
     const localProj = getFromLocal();
 
+    const projectBtn = document.getElementById("submitProject");
+    const projField = document.getElementById('addProject');
+
     // localStorage is empty
 
     if (localProj == null){
@@ -24,10 +27,13 @@ const toDoFlow = (() => {
     
         toDoBtn(toDoList);
     
-        const projectBtn = document.querySelector("#createProjectBtn");
-    
-        projectBtn.addEventListener('click', function(){
-            createProj(toDoList);
+        projectBtn.addEventListener('click', (e)=> {
+            if (projField.value === ""){
+
+            }else {
+                e.preventDefault();
+                createProj(toDoList);
+            }
         });
 
     }
@@ -43,10 +49,13 @@ const toDoFlow = (() => {
     
         toDoBtn(localProj);
     
-        const projectBtn = document.querySelector("#createProjectBtn");
-    
-        projectBtn.addEventListener('click', function(){
-            createProj(localProj);
+        projectBtn.addEventListener('click', (e)=> {
+            if (projField.value === ""){
+
+            }else {
+                e.preventDefault();
+                createProj(localProj);
+            }
         });
     }
 
