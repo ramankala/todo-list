@@ -1,5 +1,6 @@
 html,body{
     height:100%;
+    width: 100%;
     margin:0;
 }
 #container{
@@ -12,7 +13,6 @@ html,body{
     display: flex;
     flex-direction: row;
     flex: 1;
-
 }
 #header{
     text-align: start;
@@ -27,10 +27,9 @@ html,body{
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding-top: 20px;
     background-color: rgb(180, 169, 169);
     height:100%;
 }
@@ -44,21 +43,41 @@ html,body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
     
 }
-#createProjectBtn, #createToDoBtn{
-    margin: auto;
+#projectForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+input#addProject{
     font-size: 20px;
-    font-weight: 550;
+    font-weight: 540;
+    border: solid black 2px;
+    border-radius: 4px;
+    padding: 5px;
+}
+button#submitProject{
+    font-size: 18px;
+    font-weight: 540;
+    background-color: rgb(175, 60, 60);
+    color:rgb(219, 194, 199);
+    border: solid black 3px;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-left: 60px;
 }
 #bodyContainer{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    flex: 4;
-    margin: 60px;
+    flex: 3;
     gap: 10px;
+    height: 100%;
+    width: 100%;
 }
 
 #bodyTitle{
@@ -123,5 +142,33 @@ html,body{
     padding: 2px;
     font-weight: 550;
     border-radius: 6px;
+}
+#todoForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 540;
+}
+input#addTitle, input#addDesc, input#addDate, select#addPriority, input#addLocation{
+    font-size: 16px;
+    font-weight: 540;
+}
+input#addTitle, input#addDate{
+    width: 150px;
+}
+input#addLocation{
+    width: 100px;
+}
+button#submitToDo{
+    background-color: rgb(175, 60, 60);
+    color:rgb(219, 194, 199);
+    border: solid black 3px;
+    border-radius: 6px;
+}
 
+#priorityContainer{
+    display: flex;
+    flex-direction: column;
 }

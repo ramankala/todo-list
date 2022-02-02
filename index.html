@@ -10,19 +10,39 @@
       <div id="header">To-Do List</div>
       
       <div id="sideBodyContainer">
-
-
         <div id="sideContainer">
           <div id="projectList"></div>
-          <div id="createProjectBtn">+ Create Projects</div>
+          <div id="projectForm">
+            <form>
+              <input type="text" id="addProject" name="addProject" placeholder="Create Project" required>
+              <button type="submit" id="submitProject" name="submitProject">Create Project</button>
+            </form>
+          </div>
         </div>
-
         <div id=bodyContainer>
+          <div id='todoContainer'>
+            <form>
+              <div id='todoForm'>
+                <input type="text" id="addTitle" name="addTitle" placeholder="Title" required>
+                <input type="text" id="addDesc" name="addDesc" placeholder="Description">
+                <input type="date" id="addDate" name="addDate" required>
+                <div id="priorityContainer">
+                  <label for="addPriority">Choose Priority:</label>
+                  <select name="addPriority" id="addPriority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+                <input type="text" id="addLocation" name="addLocation" placeholder="Project folder">
+                <button type="submit" id='submitToDo'>Submit</button>
+              </div>
+            </form>
+          </div>
           <div id="bodyTitle"></div>
           <div id="bodySubContainer">
             <div id="content"></div>
           </div>
-          <div id="createToDoBtn">+ Create To-Do</div>
         </div>
       </div>
     </div>
